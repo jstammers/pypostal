@@ -1,4 +1,4 @@
-name: dummy
+name: buils-wheels
 
 on:
   push:
