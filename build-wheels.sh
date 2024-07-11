@@ -12,6 +12,8 @@ PYBINS=(
   "/opt/python/cp38-cp38/bin"
   "/opt/python/cp39-cp39/bin"
   "/opt/python/cp310-cp310/bin"
+  "/opt/python/cp311-cp311/bin"
+  "/opt/python/cp312-cp312/bin"
 )
 
 function repair_wheel {
