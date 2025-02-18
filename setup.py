@@ -1,29 +1,19 @@
-import argparse
 import os
-import subprocess
-import sys
 
-from setuptools import setup, Extension, Command, find_packages
-from setuptools.command.build_py import build_py
-from setuptools.command.build_ext import build_ext
-from setuptools.command.install import install
-from distutils.errors import DistutilsArgError
+from setuptools import setup, Extension, find_packages
 
-this_dir = os.path.realpath(os.path.dirname(__file__))
-
-
-VERSION = '1.1.9'
+THIS_DIR = os.path.realpath(os.path.dirname(__file__))
+VERSION = '1.2.0.dev1'
 
 
 def main():
     setup(
         name='postal',
         version=VERSION,
+        python_requires=">=3.6.*",
         install_requires=[
             'six',
-        ],
-        setup_requires=[
-            'nose>=1.0'
+            'appdirs==1.4.*',
         ],
         ext_modules=[
             Extension('postal._expand',
@@ -92,11 +82,7 @@ def main():
             'Intended Audience :: Information Technology',
             'License :: OSI Approved :: MIT License',
             'Programming Language :: C',
-            'Programming Language :: Python :: 2',
-            'Programming Language :: Python :: 2.7',
             'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.4',
-            'Programming Language :: Python :: 3.5',
             'Operating System :: MacOS :: MacOS X',
             'Operating System :: POSIX :: Linux',
             'Topic :: Text Processing :: Linguistic',
