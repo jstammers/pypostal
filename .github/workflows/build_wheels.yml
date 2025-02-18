@@ -12,7 +12,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        # os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
         python-version: [3.9, 3.10, 3.11, 3.12]
 
     steps:
@@ -29,9 +30,10 @@ jobs:
         elif [ ${{ matrix.os }} == 'windows-latest' ]; then choco install boost-msvc-1.75.0; fi
     - name: Install libpostal
       run: | 
-            if [ ${{ matrix.os }} == 'ubuntu-latest' ]; then bash .github/scripts/install_libpostal.sh; fi
-            elif [ ${{ matrix.os }} == 'macos-latest' ]; then bash .github/scripts/install_libpostal_macosx.sh; fi
-            elif [ ${{ matrix.os }} == 'windows-latest' ]; then .github/scripts/install_libpostal_win.sh; fi
+            if [ ${{ matrix.os }} == 'ubuntu-latest' ]; then bash .github/scripts/install_libpostal.sh; 
+            else if [ ${{ matrix.os }} == 'macos-latest' ]; then bash .github/scripts/install_libpostal_macosx.sh; 
+            else if [ ${{ matrix.os }} == 'windows-latest' ]; then .github/scripts/install_libpostal_win.sh; 
+            fi
 
     - name: Install dependencies
       run: |
