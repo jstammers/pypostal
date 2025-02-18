@@ -3,7 +3,7 @@ set -e -u -x
 
 THIS_DIR="$(pwd)"
 DEPS_DIR="$THIS_DIR/deps"
-LIBPOSTAL_GIT_TAG="9c975972985b54491e756efd70e416f18ff97958"
+LIBPOSTAL_GIT_TAG="ea8c106ce5d893ed3e742b068b1d8979d37cc9e3"
 
 yum install -y \
     curl \
